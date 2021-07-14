@@ -229,53 +229,7 @@ def askPlayerName():
 
 # Boilerplate Code
 def recivedMsg():
-    global SERVER
-    global playerType
-    global playerTurn
-    global rollButton
-    global screen_width
-    global screen_height
-    global canvas2
-    global dice
-    global gameWindow
-
-
-    while True:
-        message = SERVER.recv(2048).decode()
-
-        if('player_type' in message):
-            recvMsg = eval(message)
-            playerType = recvMsg['player_type']
-            playerTurn = recvMsg['turn']
-        elif('⚀' in message):
-            # Dice with value 1
-            canvas2.itemconfigure(dice, text='\u2680')
-        elif('⚁' in message):
-            # Dice with value 2
-            canvas2.itemconfigure(dice, text='\u2681')
-        elif('⚂' in message):
-            # Dice with value 3
-            canvas2.itemconfigure(dice, text='\u2682')
-        elif('⚃' in message):
-            # Dice with value 4
-            canvas2.itemconfigure(dice, text='\u2683')
-        elif('⚄' in message):
-            # Dice with value 5
-            canvas2.itemconfigure(dice, text='\u2684')
-        elif('⚅' in message):
-            # Dice with value 6
-            canvas2.itemconfigure(dice, text='\u2685')
-
-        if('player1Turn' in message and playerType == 'player1'):
-            playerTurn = True
-            rollButton = Button(gameWindow,text="Roll Dice", fg='black', font=("Chalkboard SE", 15), bg="grey",command=rollDice, width=20, height=5)
-            rollButton.place(x=screen_width / 2 - 80, y=screen_height/2  + 250)
-
-        elif('player2Turn' in message and playerType == 'player2'):
-            playerTurn = True
-            rollButton = Button(gameWindow,text="Roll Dice", fg='black', font=("Chalkboard SE", 15), bg="grey",command=rollDice, width=20, height=5)
-            rollButton.place(x=screen_width / 2 - 80, y=screen_height/2  + 260)
-
+   pass
 
 
 def setup():
